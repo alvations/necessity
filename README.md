@@ -5,6 +5,8 @@
 # Usage
 
 ```python
+
+>>> import pandas as pd
 >>> from necessity import count_column, sample_by_percentile
 
 >>> data = ['foo'] * 100 + ['bar'] * 20 + ['blah'] * 50
