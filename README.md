@@ -11,7 +11,7 @@
 >>> data += ['abc'] * 30 + ['xyz'] * 20 + ['bear'] * 10
 >>> df = pd.DataFrame({'things': data})
 
->>> count_columns(df, 'things', normalize=True)
+>>> count_column(df, 'things', normalize=True)
 foo     0.434783
 blah    0.217391
 abc     0.130435
