@@ -13,6 +13,15 @@
 >>> data += ['abc'] * 30 + ['xyz'] * 20 + ['bear'] * 10
 >>> df = pd.DataFrame({'things': data})
 
+>>> count_column(df, 'things')
+foo     100
+blah     50
+abc      30
+bar      20
+xyz      20
+bear     10
+Name: things, dtype: int64
+
 >>> count_column(df, 'things', normalize=True)
 foo     0.434783
 blah    0.217391
