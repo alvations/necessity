@@ -1,6 +1,6 @@
 # Necessity
 
-> "Ale is my bear necessity."
+> *"Ale is my bear necessity."* - Pandaren Brewmaster 
 
 # Usage
 
