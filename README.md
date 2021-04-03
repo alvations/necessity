@@ -54,7 +54,7 @@ Name: things, dtype: float64
 5  hello     [strawberry, apple, banana]
 6    meh                          [pear]
 7  world                         [apple]
->>> count_x_concat_y(pd.DataFrame(data), column_x='thing', column_y='lol')
+>>> count_x_concat_y(df, column_x='thing', column_y='lol')
                                                  lol  count
 thing                                                      
 bar                                           [pear]      1
