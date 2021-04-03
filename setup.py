@@ -4,7 +4,7 @@ import setuptools
 setup(
   name = 'necessity',
   packages = ['necessity'],
-  version = '0.0.3',
+  version = '0.0.6',
   description = 'Bear necessity',
   long_description = 'Ale is my bear necessity.',
   author = '',
