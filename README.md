@@ -1,6 +1,6 @@
 # Necessity
 
-> *"Ale is my bear necessity."* - Pandaren Brewmaster 
+> *"Ale is my bear necessity."* - Pandaren Brewmaster
 
 # Usage
 
@@ -33,4 +33,34 @@ Name: things, dtype: float64
 
 >>> sample_by_percentile(df, 'things',bins=[0.0, 0.25, 0.75, 1.0], sample_sizes=[2, 1, 1])
 ['bear', 'bar', 'abc', 'foo']
+```
+
+```python
+>>> import pandas as pd
+>>> from necessity import count_x_concat_y
+
+>>> data = {'thing': ['foo', 'bar', 'foo', 'duh', 'meh', 'hello', 'meh', 'world'],
+        'lol': [['apple', 'orange'], ['pear'], ['cherry', 'banana', 'apple', 'apple'], ['strawberry', 'banana'],
+                ['apple', 'pear'], ['strawberry', 'apple', 'banana'], ['pear'],  ['apple']]
+       }
+>>> df = pd.DataFrame(data)
+>>> df
+   thing                             lol
+0    foo                 [apple, orange]
+1    bar                          [pear]
+2    foo  [cherry, banana, apple, apple]
+3    duh            [strawberry, banana]
+4    meh                   [apple, pear]
+5  hello     [strawberry, apple, banana]
+6    meh                          [pear]
+7  world                         [apple]
+>>> count_x_concat_y(pd.DataFrame(data), column_x='thing', column_y='lol')
+                                                 lol  count
+thing                                                      
+bar                                           [pear]      1
+duh                             [strawberry, banana]      1
+foo    [apple, orange, cherry, banana, apple, apple]      2
+hello                    [strawberry, apple, banana]      1
+meh                              [apple, pear, pear]      2
+world                                        [apple]      1
 ```
