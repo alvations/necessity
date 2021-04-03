@@ -46,7 +46,7 @@ def sample_by_percentile(dataframe: pd.DataFrame,
 
 def count_x_concat_y(dataframe, column_x, column_y):
     count_x = dataframe[column_x].value_counts()
-    concat_y = dataframe.grouby(column_x).agg({column_y: list})
+    concat_y = dataframe.groupby(column_x).agg({column_y: list})
     return concat_y.join(count_x).rename({column_x:'count'}, axis=1)
 
 
