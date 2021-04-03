@@ -43,6 +43,7 @@ Name: things, dtype: float64
         'lol': [['apple', 'orange'], ['pear'], ['cherry', 'banana', 'apple', 'apple'], ['strawberry', 'banana'],
                 ['apple', 'pear'], ['strawberry', 'apple', 'banana'], ['pear'],  ['apple']]
        }
+
 >>> df = pd.DataFrame(data)
 >>> df
    thing                             lol
@@ -54,6 +55,7 @@ Name: things, dtype: float64
 5  hello     [strawberry, apple, banana]
 6    meh                          [pear]
 7  world                         [apple]
+
 >>> count_x_concat_y(df, column_x='thing', column_y='lol')
                                                  lol  count
 thing                                                      
