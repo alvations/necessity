@@ -7,4 +7,11 @@ def concat_sframes(list_of_sframes: tc.SFrame):
     return sf_all
 
 
-__all__ = ['concat_sframes']
+def count_xstr_concat_ylist(sframe, column_x, column_y):
+    return sframe.groupby(column_x,
+                          {'count': tc.aggregate.COUNT(),
+                           column_y: tc.aggregate.CONCAT(column_y)}
+                         )
+
+
+__all__ = ['concat_sframes', 'count_xstr_concat_ylist']

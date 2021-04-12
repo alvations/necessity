@@ -66,3 +66,23 @@ hello                    [strawberry, apple, banana]      1
 meh                              [apple, pear, pear]      2
 world                                        [apple]      1
 ```
+
+
+```python
+>>> import pandas as pd
+>>> from necessity import count_x_concat_y, sum_str
+
+>>> data = {'thing': ['foo', 'bar', 'foo', 'duh', 'meh', 'hello', 'meh', 'world'],
+        'lol': ['orange', 'green', 'red', 'red', 'pink', 'yellow', 'red', 'green'],
+       }
+
+>>> count_x_concat_y(df, column_x='thing', column_y='lol', concat_func=sum_str)
+                                                  lol  count
+thing                                                      
+bar                                           [green]      1
+duh                                             [red]      1
+foo                                     [orange, red]      2
+hello                                        [yellow]      1
+meh                                       [pink, red]      2
+world                                         [green]      1
+```

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from itertools import chain
 from typing import List
 
 import pandas as pd
@@ -44,10 +45,14 @@ def sample_by_percentile(dataframe: pd.DataFrame,
             new_samplesizes[l]) for l in new_samplesizes).index)
 
 
-def count_x_concat_y(dataframe, column_x, column_y):
+def sum_str(*strings):
+    return list(chain(*strings))
+
+
+def count_x_concat_y(dataframe, column_x, column_y, concat_func=sum):
     count_x = dataframe[column_x].value_counts()
-    concat_y = dataframe.groupby(column_x).agg({column_y: sum})
+    concat_y = dataframe.groupby(column_x).agg({column_y: concat_func})
     return concat_y.join(count_x).rename({column_x:'count'}, axis=1)
 
 
-__all__ = ['count_column', 'sample_by_percentile', 'count_x_concat_y']
+__all__ = ['count_column', 'sample_by_percentile', 'count_x_concat_y', 'sum_str']
